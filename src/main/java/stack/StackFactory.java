@@ -64,7 +64,7 @@ public class StackFactory {
         return x;
     }
 
-    private void endureCapacity() {
+    private void ensureCapacity() {
         if (freeSlots.isEmpty()) {
             int newSize = size * 2;
 
@@ -87,7 +87,7 @@ public class StackFactory {
         private int headSlot = -1;
 
         public void push(byte val) {
-            endureCapacity();
+            ensureCapacity();
 
             int slot = freeSlots.remove();
             int idxOfSlot = slot * SLOT_SIZE;
